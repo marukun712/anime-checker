@@ -1,4 +1,4 @@
-import { returnCurrentSeason, returnCurrentYear, createAnimeInfoCard, fetchSeasonAnimes } from './utils';
+import { returnCurrentSeason, returnCurrentYear, createAnimeInfoCard, fetchSeasonAnimes } from './utils.js';
 
 //現在の年、クールを取得
 let year = returnCurrentYear();

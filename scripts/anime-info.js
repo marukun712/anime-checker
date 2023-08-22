@@ -1,4 +1,4 @@
-import { fetchDOM, createAnimeInfoCard } from './utils';
+import { fetchDOM, createAnimeInfoCard } from './utils.js';
 
 const searchParams = new URLSearchParams(window.location.search);
 

@@ -1,4 +1,4 @@
-import { createAnimeInfoCard, fetchSeasonAnimes } from './utils';
+import { createAnimeInfoCard, fetchSeasonAnimes } from './utils.js';
 
 const searchParams = new URLSearchParams(window.location.search);
 

@@ -1,4 +1,4 @@
-import { returnCurrentYear, createAnimeInfoCard } from "./utils";
+import { returnCurrentYear, createAnimeInfoCard } from "./utils.js";
 
 const searchParams = new URLSearchParams(window.location.search);
 
