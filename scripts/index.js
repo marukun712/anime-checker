@@ -18,7 +18,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
     let seasons = document.getElementById('seasons');
     let season = seasons[seasons.selectedIndex].id
 
-    window.location.href = `/season-anime.html?year=${year}&season=${season}`;
+    window.location.href = `season-anime.html?year=${year}&season=${season}`;
 })
 
 //検索ボックスの処理
@@ -28,7 +28,7 @@ form.addEventListener('keypress', (e) => {
     //enterキーを押されたら遷移
     if (e.keyCode === 13) {
         let title = form.value;
-        window.location.href = `/search.html?title=${title}`;
+        window.location.href = `search.html?title=${title}`;
     }
 })
 
