@@ -6,7 +6,7 @@ var startYear = 2014
 var num = year - startYear + 1
 
 for (i = 0; i < num; i++) {
-    document.getElementById("years").insertAdjacentHTML("beforeend", `<option>${startYear++}</option>`)
+    document.getElementById("years").insertAdjacentHTML("beforeend", `<option>${year--}</option>`)
 }
 
 //searchButtonが押されたら発火
@@ -18,6 +18,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
     let seasons = document.getElementById('seasons');
     let season = seasons[seasons.selectedIndex].id
 
+    //クールごとのアニメ情報ページに遷移
     window.location.href = `season-anime.html?year=${year}&season=${season}`;
 })
 
@@ -28,6 +29,7 @@ form.addEventListener('keypress', (e) => {
     //enterキーを押されたら遷移
     if (e.keyCode === 13) {
         let title = form.value;
+        //検索ページに遷移
         window.location.href = `search.html?title=${title}`;
     }
 })
@@ -37,6 +39,7 @@ function addLiked(id) {
     let urlDom = document.getElementById(`${id}_url`);
     let url = urlDom.getAttribute("href")
     let title = urlDom.children[0].innerText;
+    console.log(urlDom)
 
     let imageDom = document.getElementById(`${id}_image`);
     let image = imageDom.getAttribute("src")

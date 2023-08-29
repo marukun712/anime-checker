@@ -1,5 +1,3 @@
-import { fetchDOM, createAnimeInfoCard } from './utils.js';
-
 const searchParams = new URLSearchParams(window.location.search);
 
 //クエリパラメータから年、クール、検索対象のアニメIDを取得
@@ -24,6 +22,7 @@ async function fetchAnimeinfo(year, season, id) {
 async function main() {
     let animeInfo = await fetchAnimeinfo(year, season, id);
 
+    /*
     //OGP画像を取得する
     let text = await fetchDOM(animeInfo.public_url)
 
@@ -39,8 +38,11 @@ async function main() {
             imageURL = v.getAttribute("content")
         }
     })
+    */
 
-    //アニメ情報を入れる
+    let imageURL = 'public/ogp.png'
+
+    //詳細情報情報を表示する
     document.getElementById('title').innerHTML = animeInfo.title
     document.getElementById('twitter').innerHTML = '@' + animeInfo.twitter_account
     document.getElementById('twitter-tag').innerHTML = 'Twitterタグ: #' + animeInfo.twitter_hash_tag
@@ -64,10 +66,8 @@ async function main() {
         document.getElementById('image').setAttribute("src", 'public/noimage-760x460.png')
     }
 
-    //1000ミリ秒空けてローディング画面を削除
-    await setTimeout(() => {
-        document.getElementById("loading").remove();
-    }, 1000);
+    //ローディング画面を削除
+    await document.getElementById("loading").remove();
 }
 main();
 

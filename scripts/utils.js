@@ -49,6 +49,7 @@ export function fetchDOM(url) {
 
 //アニメ情報カードを作成
 export async function createAnimeInfoCard(year, season, data, position) {
+    /*
     //OGP画像の取得
     let text = await fetchDOM(data.public_url)
 
@@ -68,6 +69,9 @@ export async function createAnimeInfoCard(year, season, data, position) {
     if (!imageURL) {
         imageURL = 'public/noimage-760x460.png'
     }
+    */
+
+    let imageURL = 'public/ogp.png'
 
     //お気に入りに登録されているか
     if (localStorage.getItem(data.id)) {
@@ -75,7 +79,9 @@ export async function createAnimeInfoCard(year, season, data, position) {
             `
         <div class="2xl:p-3 p-1" id="${data.id}">
             <div class="card glass w-36 h-52 2xl:w-52 2xl:h-52">
-                <figure class="h-24"><img src="${imageURL}"alt="image" id="${data.id}_image"/></figure>
+                <a href=anime-info.html?year=${year}&season=${season}&id=${data.id}>
+                    <figure class="h-24"><img src="${imageURL}"alt="image" id="${data.id}_image"/></figure>
+                </a>
                 <div class="card-body">
                     <a href=anime-info.html?year=${year}&season=${season}&id=${data.id} id="${data.id}_url">
                         <p class="truncate">${data.title}</p>
@@ -92,7 +98,9 @@ export async function createAnimeInfoCard(year, season, data, position) {
             `
         <div class="2xl:p-3 p-1" id="${data.id}">
             <div class="card glass w-36 h-52 2xl:w-52 2xl:h-52">
-                <figure class="h-24"><img src="${imageURL}"alt="image" id="${data.id}_image"/></figure>
+                <a href=anime-info.html?year=${year}&season=${season}&id=${data.id}>
+                    <figure class="h-24"><img src="${imageURL}"alt="image" id="${data.id}_image"/></figure>
+                </a>
                 <div class="card-body">
                     <a href=anime-info.html?year=${year}&season=${season}&id=${data.id} id="${data.id}_url">
                         <p class="truncate">${data.title}</p>

@@ -4,7 +4,9 @@ function createLikedAnimeCard(position, key, title, imageURL, url) {
         `
         <div class="2xl:p-3 p-1 z-0" id="${key}">
             <div class="card glass w-36 h-52 2xl:w-52 2xl:h-52">
-                <figure class="h-24"><img src="${imageURL}"alt="image"/></figure>
+                <a href="${url}">
+                    <figure class="h-24"><img src="${imageURL}"alt="image"/></figure>
+                </a>
                 <div class="card-body">
                     <a href="${url}">
                         <p class="truncate">${title}</p>
@@ -23,6 +25,7 @@ for (var key in localStorage) {
     let json = localStorage.getItem(key)
     let item = JSON.parse(json)
 
+    //詳細情報を取得
     let title = item.title;
     let imageURL = item.imageURL;
     let url = item.URL;

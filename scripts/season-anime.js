@@ -30,10 +30,8 @@ async function main() {
         createAnimeInfoCard(year, season, data, cardArea)
     )
 
-    //2000ミリ秒空けてローディング画面を削除
-    await setTimeout(() => {
-        document.getElementById("loading").remove();
-    }, 2000);
+    //ローディング画面を削除
+    await document.getElementById("loading").remove();
 }
 main();
 
