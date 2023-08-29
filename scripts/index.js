@@ -36,10 +36,10 @@ form.addEventListener('keypress', (e) => {
 
 //アニメをお気に入りに追加
 function addLiked(id) {
+    //カードから詳細情報を取得
     let urlDom = document.getElementById(`${id}_url`);
     let url = urlDom.getAttribute("href")
     let title = urlDom.children[0].innerText;
-    console.log(urlDom)
 
     let imageDom = document.getElementById(`${id}_image`);
     let image = imageDom.getAttribute("src")

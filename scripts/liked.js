@@ -20,6 +20,10 @@ function createLikedAnimeCard(position, key, title, imageURL, url) {
     )
 }
 
+if (localStorage.length == 0) {
+    document.getElementById("mainText").innerHTML = "お気に入りのアニメはありません"
+}
+
 //localstrageから全ての情報を取得
 for (var key in localStorage) {
     let json = localStorage.getItem(key)
