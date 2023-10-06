@@ -46,6 +46,8 @@ async function main() {
     document.getElementById('title').innerHTML = animeInfo.title
     document.getElementById('twitter').innerHTML = '@' + animeInfo.twitter_account
     document.getElementById('twitter-tag').innerHTML = 'Twitterタグ: #' + animeInfo.twitter_hash_tag
+    document.getElementById('company-name').innerHTML = '会社名: ' + animeInfo.product_companies
+    document.getElementById('official-timeline').setAttribute('href', "https://twitter.com/" + animeInfo.twitter_account)
 
     if (localStorage.getItem(id)) {
         document.getElementById("likeButton").insertAdjacentHTML("beforeend", `<button class="btn btn-error w-32 h-12" onclick="removeLiked(${id})">お気に入りから削除</button>`)
